@@ -109,17 +109,6 @@ SQLite database `car_service_system.db`, 6 tables. Full definitions are in [`sch
 - `service_requests.status` moves through: `received` → `assigned` → `in_progress` → `completed`.
 - Deleting a user/vehicle/request cascades to delete its dependent vehicles/requests/parts-used/invoice rows (`ON DELETE CASCADE`), so no orphaned data is left behind.
 
-```mermaid
-erDiagram
-    USERS ||--o{ VEHICLES : owns
-    USERS ||--o{ SERVICE_REQUESTS : "submits (customer)"
-    USERS ||--o{ SERVICE_REQUESTS : "is assigned (mechanic)"
-    USERS ||--o{ INVOICES : issues
-    VEHICLES ||--o{ SERVICE_REQUESTS : "is subject of"
-    SERVICE_REQUESTS ||--o{ SERVICE_PARTS_USED : consumes
-    SERVICE_REQUESTS ||--o| INVOICES : "billed by"
-    INVENTORY_PARTS ||--o{ SERVICE_PARTS_USED : "used as"
-```
 
 ## Known Limitations
 
