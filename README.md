@@ -91,7 +91,7 @@ A typical end-to-end flow, using four accounts (one per role):
 
 ## Database Schema
 
-SQLite database `car_service_system.db`, 6 tables. Full definitions are in [`schema.sql`](./schema.sql); summary below.
+SQLite database `car_service_system.db`, 6 tables.
 
 | Table | Purpose | Key columns |
 |---|---|---|
